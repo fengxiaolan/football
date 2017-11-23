@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no">
+	<title>注册</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/register.css">
+
+</head>
+<body>
+   <div class="content">
+			
+				<header class="header">
+					足球圈 — 注册
+				</header>
+				<section class="section">
+					<input type="text" name="tel" placeholder="手机号" class="tel">
+					<input type="password" name="password" placeholder="密码" class="password">
+					<input type="text" name="nickname" placeholder="昵称" class="nickname">
+					<input type="submit" name="lala" value="提    交" class="submit">
+				</section>
+	
+</div>
+
+
+</body>
+<script src="../js/commen.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+         var $tel=$(".tel"),
+             $pwd=$(".password"),
+             $name=$(".nickname");
+        //点击提交的简单提示
+        $(".submit").on("click",function(e){
+        	e.preventDefault();
+        	var params={};
+        	params.tel=$tel.val().trim();
+        	params.pwd=$pwd.val().trim();
+        	params.name=$name.val().trim();
+        	
+
+        	if(!params.tel&&!params.pwd&&!params.name){
+        		alert("电话不能为空！");
+        		return;
+        	}
+            //正则匹配
+             var reg1=/^1[3|4|5|8][0-9]\d{4,8}$/;
+             if(!reg1.test(params.tel)&&params.tel){
+                alert("电话格式不正确！");
+                return;
+             }
+             
+        	if(!params.tel&&params.pwd){
+        		alert("电话不能为空！");
+        		return;
+        	}
+        	if(params.tel&&!params.pwd){
+        		alert("密码不能为空！");
+        		return;
+        	}
+        	if(params.tel&&params.pwd&&!params.name){
+        		alert("昵称不能为空！");
+        		return;
+        	}
+
+            //发送请求
+
+            $.post('/register',params,function(data){
+               console.log(data);
+               if(!data.code){;
+                    // if(data.doc.tel){
+                    //    $tel.val('');
+                    //    $pwd.val('');
+                    //    $name.val('');
+                    // }
+                   alert("注册成功!");
+                   location.href="./login.html";
+                }else{
+                    console.log(data.msg);
+                }
+                if(data.code=="2"){
+                    alert("112");
+                    return;
+                }
+            })
+
+       
+	  })
+
+
+        
+     })  
+</script>
+</html>

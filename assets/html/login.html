@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no">
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/login.css">
+
+</head>
+<body>
+   <div class="content">
+			
+				<header class="header">
+					足球圈 —登录
+				</header>
+				<section class="section">
+					<input type="text" name="tel" placeholder="手机号" class="tel">
+					<input type="password" name="password" placeholder="密码" class="password">
+					<p class="loginfo">还没有账号？点击此处立即  <a href="register.html" class="goreg">注册</a></p>
+					<input type="submit" name="lala" value="提    交" class="submit">
+				</section>
+	
+</div>
+
+</body>
+<script src="../js/commen.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+     $(function(){
+         var $tel=$(".tel"),
+             $pwd=$(".password");
+        //点击提交的简单提示
+        $(".submit").on("click",function(e){
+        	e.preventDefault();
+        	var params={};
+        	params.tel=$tel.val().trim();
+        	params.pwd=$pwd.val().trim();
+        	if(!params.tel&&!params.pwd){
+        		alert("电话不能为空！");
+        		return;
+        	}
+        	if(!params.tel&&params.pwd){
+        		alert("电话不能为空！");
+        		return;
+        	}
+        	if(params.tel&&!params.pwd){
+        		alert("密码不能为空！");
+        		return;
+        	}
+
+            //正则匹配
+    	     var reg1=/^1[3|4|5|8][0-9]\d{4,8}$/;
+    	     if(!reg1.test(params.tel)){
+    	     	alert("电话格式不正确！");
+    	     }
+
+               //发送请求post
+            $.post('/login',params,function(data){
+                console.log(data);  //输入数据库中的东西，打印出ok 
+                location.href = `./index.html?tel=${params.tel}`;
+            })
+
+             //存储
+             if(window.localStorage){
+                localStorage.setItem("tel",JSON.stringify(params.tel));
+             }
+
+	      });
+
+
+
+     })
+</script>
+</html>

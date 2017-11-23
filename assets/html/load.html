@@ -1,0 +1,47 @@
+
+             <ul>
+					<li class="home">
+						<a href="#"><i class="iconfont icon-shouye"></i><span>首页</span></a>
+					</li>
+					<li class="find">
+						<a href="#"><i class="iconfont icon-sousuo"></i><span>发现</span></a>
+					</li>
+					<li class="camera">
+						<a href="#"><i class="iconfont icon-xiangji"></i></a>
+					</li>
+					<li class="mine">
+						<a href="#"><i class="iconfont icon-wode"></i><span>我的</span></a>
+					</li>
+					<li class="back">
+						<a href="#"><i class="iconfont icon-tuichu"></i><span>退出</span></a>
+					</li>
+				</ul>
+    
+
+<script type="text/javascript">
+   $(function(){
+   	  //尾部情况点击跳转情况
+    	$(".footer ul li").on("click",function(e){
+    		e.preventDefault();
+    		$(this).addClass("active").siblings().removeClass("active");
+    	})
+
+    	$(".footer ul .home").on('click',function(){
+    		location.href="index.html";
+    	})
+    	$(".footer ul .find").on('click',function(){
+    		location.href="search.html";
+    		$(this).addClass("active").siblings().removeClass("active");
+    	})
+    	$(".footer ul .camera").on('click',function(){
+    		location.href="photo.html";
+    	})
+    	$(".footer ul .mine").on('click',function(){
+    		location.href="personal.html";
+    	})
+    	$(".footer ul .back").on('click',function(){
+    		location.href="login.html";
+    		localStorage.removeItem('tel');
+    	})
+   })
+</script>

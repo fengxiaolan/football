@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no">
+	<title>个人中心</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/font/iconfont.css">
+  <link rel="stylesheet" type="text/css" href="../css/load.css">
+	<link rel="stylesheet" type="text/css" href="../css/swiper-3.4.2.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/personal.css">
+</head>
+<body>
+   <header class="header">
+		个人中心
+	</header>
+    <div class="sugnick">
+      <div class="nickimg">
+
+	       <!-- <img src="../images/nick.png" alt="图像"> -->
+         <input type="file" class="selectfile" value="">
+      </div>
+		 <div class="nickinfo">
+			 <p class="nicktitle">我是小萌</p>
+			<p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+		</div>	
+	 </div>
+<!-- ******************* -->
+<!-- 如果需要分页器 -->
+<div class="pagination"></div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slidepe1">
+        	<div class="phocon">
+        	<img src="../images/mei.png" class="photo">
+        	<img src="../images/mei.png" class="photo">
+        	<img src="../images/mei.png" class="photo">
+        	<img src="../images/mei.png" class="photo">
+        	<img src="../images/mei.png" class="photo">
+        	<img src="../images/mei.png" class="photo">
+        	<img src="../images/mei.png" class="photo">
+        	<img src="../images/mei.png" class="photo">
+        	<img src="../images/mei.png" class="photo">
+           </div>
+        </div>
+        <div class="swiper-slide slidepe2">Slide 2</div>
+        <div class="swiper-slide slidepe3">Slide 3</div>
+    </div>
+    
+</div>
+
+<footer class="footer"></footer>
+
+</body>
+<script src="../js/commen.js"></script>
+<script src="../js/swiper-3.4.2.min.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../js/iscroll-probe.js"></script>
+<script type="text/javascript">
+    var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    // loop: true,
+    // autoplay:2000,
+    // 如果需要分页器
+    pagination: '.pagination',
+    paginationClickable: true,
+	  bulletClass:"my-bullet",
+    bulletActiveClass:"bullet-active",
+    paginationBulletRender:function(swiper, index, className){
+	    var arr = ["照片","关注","粉丝"]
+	    return '<span class="' + className + '">' + arr[index]+" ( "+1+" ) " + '</span>';
+	}
+  })  
+
+
+
+  var  myIscroll1 = new IScroll(".slidepe1",{ //配置对象
+         scrollbars:true, //滚动条
+         mouseWheel:true, //鼠标滚动
+         tap:true,
+         probeType: 2,
+         // startY:-40 //y初始滑动，要为负值
+    })
+ 
+
+ $(function(){
+  //个人中心中点击图片更换头像
+    $(".selectfile").on('change',function(e){
+       e.preventDefault();
+       //console.log("124");
+       var type=this.files[0].type;
+          if(type=="image/png"||type=="image/jpeg"){
+            //创建formdata对象
+             var form=new FormData();
+             form.append('upload',this.files[0]); //约定跟后台沟通用哪个key
+             //发送ajax请求
+             $.ajax({
+              url:"/upload",
+              data:form,
+              type:"post",
+              dataType:"json",
+              contentType: false,  
+              processData: false,   
+              success(res){  //对象的简写
+                console.log(res);
+                $(".sugnick .nickimg").attr('backgrond-image',res.img);
+              }
+             })
+          }else{
+            alert("图片类型不支持！需要png/jpeg");
+          } 
+
+    })
+
+    
+    //尾部引入
+     $.ajax({
+      type:"get",
+          url:"load.html",
+          dataType:"html",
+          success:function(data){
+               var html=data;
+              $(".footer").html(html);
+         }
+      })
+    
+
+    //storage取
+    if(window.localStorage){
+        var tel=localStorage.getItem("tel");
+       // console.log(tel);
+        if(!tel){
+          $(".nickinfo .nicktitle").html("我是小萌");
+        }else{
+          $(".nickinfo .nicktitle").html(JSON.parse(tel));
+        }
+       
+     }
+
+ })     
+</script>
+</html>

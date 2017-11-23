@@ -1,0 +1,51 @@
+.footer{
+ 	background: #fff;
+ 	height: 0.44rem;
+ 	width: 100%;
+ 	position: fixed;
+ 	bottom: 0;
+ 	left: 0;
+ 	z-index: 999;
+ }
+ 
+.footer ul{
+	display: flex;
+	width: 100%;
+	height: 0.44rem;
+	padding-top: 0.05rem;
+ 	box-sizing:border-box;
+	justify-content: space-around;
+}
+.footer ul li span{
+	display: block;
+	font-size: 0.12rem;	
+}
+.footer ul li{
+	text-align: center;
+	float: left;
+}
+.footer ul li>a{
+	color: #666;
+	font-size: 0.15rem;	
+}
+.footer ul li:nth-child(3){
+	width: 0.5rem;
+	height:0.5rem;
+	border: 1px solid #999;
+	border-radius: 50%;
+	position: relative;
+	top:-0.12rem;
+	z-index: 999;
+	background: #fff;
+}
+.footer ul li:nth-child(3) i{
+	font-size: 0.28rem;
+	line-height: 0.5rem;
+
+}
+.footer ul li.active>a{
+   color: #0dc441;	
+}
+.footer ul li.active span{
+	 color: #0dc441;	
+}

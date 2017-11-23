@@ -1,0 +1,40 @@
+html,body,div, dl,dt, dd, h1, h2, h3, h4, h5, h6, p,form,ol,li,ul,th,td,fieldset,legend{margin:0; padding:0;box-sizing:border-box;}
+h1, h2, h3, h4, h5, h6,b,strong{font-weight:normal;}
+i,em{font-style:normal;}
+img{border:none;display:block;}
+a{text-decoration:none;}
+ul,ol,li{list-style:none;}
+input,button{outline:none;border:0;}
+table{border-collapse: collapse;border-spacing: 0;}
+/*清楚所有浮动，防止高度塌陷*/
+.clearfix:after{ 
+	  display:block; 
+	  content:"."; 
+	  height:0; 
+	  font-size:0; 
+	  clear:both; 
+	  overflow:hidden;
+	  visibility: hidden;
+}
+::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #d8d8eb; 
+} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #d8d8eb; 
+} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #d8d8eb; 
+} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #d8d8eb; 
+}
+html{
+	font-size: 100px;
+}
+html,body{
+	height: 100%;
+}
+body{
+	font-family: "微软雅黑";
+	font-size: 0.12rem;	
+}

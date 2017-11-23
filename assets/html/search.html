@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no">
+	<title>发现</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/load.css">
+	<link rel="stylesheet" type="text/css" href="../css/search.css">
+
+</head>
+<body>
+	<div class="container">
+
+	<div class="top">
+        <header class="header">
+		   发现
+	    </header>
+	    <div class="senav">
+			<input type="text" placeholder="请输入昵称" class="nickname">
+			<button class="gosearch">搜索</button>
+		</div>
+	</div>
+   <div class="history">
+	          
+	</div>
+
+	<section class="section">
+		<div class="secontent">
+
+			<div class="sugnick">
+                <img src="../images/nick.png" alt="图像" class="nickimg">
+	            <div class="nickinfo">
+	               <p class="nicktitle">我是小萌</p>
+	               <p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+	            </div>
+	            <button class="attention active">关注</button>
+		    </div>
+            <div class="sugnick">
+                <img src="../images/nick.png" alt="图像" class="nickimg">
+	            <div class="nickinfo">
+	               <p class="nicktitle">我是小萌</p>
+	               <p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+	            </div>
+	            <button class="attention">关注</button>
+		    </div>
+		    <div class="sugnick">
+                <img src="../images/nick.png" alt="图像" class="nickimg">
+	            <div class="nickinfo">
+	               <p class="nicktitle">我是小萌</p>
+	               <p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+	            </div>
+	            <button class="attention">关注</button>
+		    </div>
+		    <div class="sugnick">
+                <img src="../images/nick.png" alt="图像" class="nickimg">
+	            <div class="nickinfo">
+	               <p class="nicktitle">我是小萌</p>
+	               <p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+	            </div>
+	            <button class="attention">关注</button>
+		    </div>
+		    <div class="sugnick">
+                <img src="../images/nick.png" alt="图像" class="nickimg">
+	            <div class="nickinfo">
+	               <p class="nicktitle">我是小萌</p>
+	               <p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+	            </div>
+	            <button class="attention">关注</button>
+	            
+		    </div>
+		    <div class="sugnick">
+                <img src="../images/nick.png" alt="图像" class="nickimg">
+	            <div class="nickinfo">
+	               <p class="nicktitle">我是小萌</p>
+	               <p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+	            </div>
+	            <button class="attention">关注</button>
+		    </div>
+		    <div class="sugnick">
+                <img src="../images/nick.png" alt="图像" class="nickimg">
+	            <div class="nickinfo">
+	               <p class="nicktitle">我是小萌</p>
+	               <p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+	            </div>
+	            <button class="attention">关注</button>
+		    </div>
+		    <div class="sugnick">
+                <img src="../images/nick.png" alt="图像" class="nickimg">
+	            <div class="nickinfo">
+	               <p class="nicktitle">我是小萌</p>
+	               <p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+	            </div>
+	            <button class="attention">关注</button>
+		    </div>
+
+		    <div class="sugnick">
+                <img src="../images/nick.png" alt="图像" class="nickimg">
+	            <div class="nickinfo">
+	               <p class="nicktitle">我是小萌</p>
+	               <p class="nickmess">我是小萌我怕谁！h哈哈哈哈</p>
+	            </div>
+	            <button class="attention">关注</button>
+		    </div>
+
+		</div>
+	</section>
+	
+	<footer class='footer'>
+
+	</footer>	
+</div>				
+
+</body>
+<script src="../js/commen.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../js/iscroll-probe.js"></script>
+<script type="text/javascript">
+  
+    var  myIscroll = new IScroll(".section",{ //配置对象
+         scrollbars:true, //滚动条
+         mouseWheel:true, //鼠标滚动
+         tap:true,
+         probeType: 2,
+         // startY:76,
+
+    })
+    
+    $(function(){
+    	//发现点击关注
+	 	$(".attention").on('click',function(e){
+	 		e.preventDefault();
+	 		if($(this).hasClass("active")){
+	 			$(this).removeClass("active");
+	 		}else{
+	 			$(this).addClass("active");
+	 		}
+	 	})
+
+
+	 	//尾部引入
+	   $.ajax({
+			type:"get",
+	        url:"load.html",
+	        dataType:"html",
+	        success:function(data){
+	             var html=data;
+	            $(".footer").html(html);
+         }
+	    })
+
+	   //尾部颜色变化(错误)
+    $(".footer ul li:nth-child(2)").addClass("active").siblings().removeClass("active");
+     
+
+     //搜索功能实现
+      $(".senav .nickname").on('keyup',function(){
+	      var keynickname=$(".senav .nickname").val();
+	      console.log(keynickname);
+	      if(keynickname!==""){
+	      	localStorage.setItem("history",JSON.stringify(keynickname));
+	      }
+	      
+	       var history=localStorage.getItem("history");
+	       history=JSON.parse(history);
+	     
+      	   var list = '';
+		    //动态添加元素至页面上
+		    if(history!=""){
+		        $(".history").show();
+		          list = '<a class="title">'+history+'</a>';
+		            $(".history").html(list);
+
+		    }else{
+		        $(".history").hide();
+		    }
+      })
+	  
+/*
+	  $(".gosearch").on('click',function(e){
+	  		e.preventDefault();
+	  		var keynickname=$(".senav .nickname").val();
+	  })*/
+    })
+</script>
+</html>

@@ -1,0 +1,118 @@
+.container{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+.history{
+	position: absolute;
+	top: 0.7rem;
+	width: 75%;
+	margin-left:0.08rem;
+	/*height: 1rem;*/
+	background: #fff;
+	z-index: 4;
+	overflow: hidden;
+	display: none;
+}
+.history .title{
+	line-height: 0.2rem;
+	width: 100%;
+	display: block;
+}
+
+
+
+.top{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+    z-index: 3;
+}
+.header{
+	width: 100%;
+	text-align: center;
+	height: 0.44rem;
+	line-height: 0.44rem;
+	font-size: 0.16rem;
+	color: #fff;
+	background: #0dc441;
+}
+.senav{
+	height: 0.32rem;
+	padding:0.05rem 0.07rem;
+	width: 100%;
+	border-bottom: 1px solid #cdcdcd;
+	display: flex;
+}
+.senav .nickname{
+	width:80%; 
+	border-radius: 0.05rem;
+	border:1px solid #aaa;
+	padding:0.05rem;
+}
+.senav .gosearch{
+	width: 20%;
+	margin-left: 0.05rem;
+	background:#0dc441;
+	color: #fff;
+	font-size:0.12rem; 
+	border-radius: 0.03rem; 
+}
+.section{
+	flex:1;
+	overflow:hidden;
+	height: 4.28rem;
+	background: #f1f1f1;
+	margin-top: 0.76rem;
+}
+.sugnick{
+	height: 0.8rem;
+	border-bottom: 1px solid #d8d8d8;
+	display: flex;
+	justify-content:space-between;
+	padding:0.14rem 0.12rem 0.12rem 0.1rem; 
+}
+.sugnick .nickimg{
+   width: 0.5rem;
+   height: 0.5rem;
+   border-radius: 50%;
+   border:1px solid #999;
+}
+.sugnick .nickinfo{
+   width: 70%;
+   margin-left: 0.09rem;
+   padding-top: 0.05rem;
+}
+.sugnick .nickinfo .nicktitle{
+	font-size: 0.16rem;
+	color: #000;
+}
+.sugnick .nickinfo .nickmess{
+	font-size: 0.12rem;
+	color: #cbcbcb;
+	line-height: 0.3rem;
+}
+.sugnick .attention{
+   margin-top: 0.05rem;
+   width: 0.4rem;
+   margin-left: 0.09rem;
+   height: 0.18rem;
+   line-height: 0.18rem;
+   background:#d8d8d8;
+   color: #fff; 
+   font-size: 0.12rem;
+   border-radius: 0.03rem;
+}
+.sugnick .active{
+  background: #0dc441;
+}
+
+/**footer*************/
+.footer ul li>a{
+	color: #666;
+}
+.footer ul li:nth-child(2)>a{
+   color: #0dc441;	
+}

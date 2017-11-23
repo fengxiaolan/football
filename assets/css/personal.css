@@ -1,0 +1,111 @@
+.header{
+	width: 100%;
+	text-align: center;
+	height: 0.44rem;
+	line-height: 0.44rem;
+	font-size: 0.18rem;
+	color: #fff;
+	background: #0dc441;
+}
+
+.sugnick{
+	height: 0.8rem;
+	display: flex;
+	justify-content:space-between;
+	padding:0.14rem 0.12rem 0.12rem 0.1rem; 
+}
+.sugnick .nickimg{
+   /*width: 0.5rem;
+   height: 0.5rem;
+   background: #fff;
+   position: relative;*/
+   border-radius: 50%;
+   border:1px solid #999;
+   width: 0.5rem;
+   height: 0.5rem;
+   background-image:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3922788236,1624453035&fm=27&gp=0.jpg );
+   
+   
+   background-position:center;
+   background-size: contain;
+   overflow:hidden; 
+}
+
+.sugnick .nickimg .selectfile{
+	 opacity:0;
+	 width: 0.5rem;
+     height: 0.5rem;
+     border:1px solid transparent;
+     border-radius: 50%;
+}
+.sugnick .nickinfo{
+   width: 80%;
+   margin-left: 0.09rem;
+   padding-top: 0.05rem;
+}
+.sugnick .nickinfo .nicktitle{
+	font-size: 0.16rem;
+	color: #000;
+}
+.sugnick .nickinfo .nickmess{
+	font-size: 0.12rem;
+	color: #cbcbcb;
+	line-height: 0.3rem;
+}
+
+/**************/
+.swiper-container{
+	width: 100%;
+	height: 3.64rem;
+}
+.pagination{
+	display: flex;
+	width: 100%;
+	height: 0.36rem;
+	line-height: 0.35rem;
+	box-sizing:border-box;
+	border-bottom: 1px solid #e5e5e5;
+	background:#fff;
+}
+  .pagination .my-bullet{
+    flex:1;
+    line-height: 0.35rem;
+    text-align: center;
+    color: #666;
+}
+ .pagination .bullet-active{
+ 	color: #0dc441;
+ 	box-sizing:border-box;
+ 	border-bottom:0.02rem solid #0dc441; 
+ }
+
+
+.slidepe1{
+	width: 100%;
+    height: 3.64rem;
+}
+.slidepe1 .phocon{
+	width: 100%;
+    box-sizing: border-box;
+	padding: 0 0.02rem;
+	display: flex;
+	flex-wrap: wrap;
+	overflow-x:hidden;
+}
+.slidepe1 .photo{
+	width:50%;
+	margin-top: 0.02rem;
+	box-sizing: border-box;
+}
+
+.slidepe1 .photo:nth-child(2n){
+	padding-left: 0.01rem;
+}
+.slidepe1 .photo:nth-child(2n+1){
+	padding-right:  0.01rem;
+}
+
+/**********/
+.footer ul li:nth-child(4)>a{
+   color: #0dc441;	
+}

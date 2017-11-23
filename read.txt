@@ -1,0 +1,19 @@
+﻿//需求安装
+express 
+body-parser
+ws
+node -v
+mongoose(Á¬½ÓÊý¾Ý¿â£©
+upload
+
+初始化 cnpm init
+数据库
+启动start
+mongo.exe -----football --users
+                        --lifes
+                        --beauties
+                        --spots
+
+
+在当前位置命令符，连接数据库node server.js
+ 或 supervisor server.js

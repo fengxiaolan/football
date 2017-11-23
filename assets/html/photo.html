@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1,user-scalable=no">
+	<title>注册</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/load.css">
+	<style type="text/css">
+        .content{
+        	width: 100%;
+        	height: 80%;
+        	background:rgba(0,0,0,0.3);
+        }
+	</style>
+</head>
+<body>
+   <div class="content">
+          拍照留下美丽一刻
+  </div>
+  <div class="footer">
+
+  </div>
+
+</body>
+<script src="../js/commen.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+   //尾部引入
+	   $.ajax({
+			type:"get",
+	        url:"load.html",
+	        dataType:"html",
+	        success:function(data){
+	             var html=data;
+	            $(".footer").html(html);
+         }
+	    })
+</script>
+</html>

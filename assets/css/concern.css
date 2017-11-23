@@ -1,0 +1,157 @@
+.concerntain{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.header{
+  background: #0dc441;
+  width: 100%;
+  height: 0.44rem;
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  justify-content:center;
+  align-items: center;
+}
+.header ul{
+  width: 1.18rem;
+  height: 0.25rem;
+  line-height: 0.25rem;
+  display: flex;
+  border-radius: 0.12rem;
+}
+.header ul li{
+  width: 0.59rem;
+  text-align: center;
+}
+.header ul li.active{
+   background: #64d985;
+}
+.header ul li{
+   background:#3dd067 ;
+}
+.header ul li.active a{
+  color:#fff;
+}
+.header ul li a{
+  color:#a3e9b7;  
+}
+.header ul li:nth-child(1){
+  border-radius: 0.12rem 0 0 0.12rem;
+}
+.header ul li:nth-child(2){
+  border-radius: 0 0.12rem 0.12rem 0; 
+}
+/*******************/
+.footer{
+  background: #fff;
+  height: 0.44rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+ }
+ 
+.footer ul{
+  display: flex;
+  width: 100%;
+  height: 0.44rem;
+  padding-top: 0.05rem;
+  box-sizing:border-box;
+  justify-content: space-around;
+}
+.footer ul li span{
+  display: block;
+  font-size: 0.12rem; 
+}
+.footer ul li{
+  text-align: center;
+}
+.footer ul li>a{
+  color: #666;
+  font-size: 0.15rem; 
+}
+.footer ul li:nth-child(3){
+  width: 0.5rem;
+  height:0.5rem;
+  border: 1px solid #999;
+  border-radius: 50%;
+  position: relative;
+  top:-0.12rem;
+  z-index: 3;
+  background: #fff;
+}
+.footer ul li:nth-child(3) i{
+  font-size: 0.28rem;
+  line-height: 0.5rem;
+
+}
+.footer ul li.active>a{
+   color: #0dc441;  
+}
+.footer ul li.active span{
+   color: #0dc441;  
+}
+
+/*******************/
+
+.content{
+  height: 4.6rem;
+  margin-top: 0.44rem;
+  flex:1;
+  overflow: hidden;
+}
+.oneattention {
+   border-bottom: 0.1rem solid #f1f1f1;
+}
+.oneattention .sugnick{
+	height: 0.8rem;
+	border-bottom: 1px solid #d8d8d8;
+	display: flex;
+	justify-content:space-between;
+	padding:0.14rem 0.12rem 0.12rem 0.1rem; 
+}
+.sugnick .nickimg{
+   width:  0.5rem;
+   height: 0.5rem;
+   border-radius: 50%;
+   border:1px solid #999;
+}
+.sugnick .nickinfo{
+   width: 60%;
+   margin-left: 0.05rem;
+   padding-top: 0.05rem;
+}
+.sugnick .nickinfo .nicktitle{
+	font-size: 0.16rem;
+	color: #000;
+}
+.sugnick .nickinfo .nickmess{
+	font-size: 0.12rem;
+	color: #cbcbcb;
+	line-height: 0.3rem;
+}
+.sugnick .zanamount{
+    width: 20%;
+    text-align: right;
+}
+.sugnick .zanamount .zannum{
+   color: #e1e1e1;
+}
+.icon-dianzan{
+   color: #e1e1e1;
+}
+.sugnick .zanamount .active{
+   color: red;
+}
+.oneattention .datu{
+   width: 100%;
+}
+.oneattention .pubcontent {
+     font-size: 0.14rem;
+     color: #595959;
+     width: 100%;
+     padding: 0.09rem 0.15rem;
+}
