@@ -17,3 +17,7 @@ mongo.exe -----football --users
 
 在当前位置命令符，连接数据库node server.js
  或 supervisor server.js
+ 
+ 
+ 使用技术:
+ js+node+mongodb
